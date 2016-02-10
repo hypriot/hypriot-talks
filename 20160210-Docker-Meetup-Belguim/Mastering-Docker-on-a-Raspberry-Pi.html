@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Mastering Docker on a Raspberry Pi
+
+these days it's easy, but a long time ago...
+
+***
+
+Dieter Reuter [@Quintus23M](https://twitter.com/Quintus23M)
+
+Hypriot Team [@HypriotTweets](https://twitter.com/HypriotTweets)
+
+http://blog.hypriot.com
+
+***
+
+Docker Meetup Belgium / February 10th, 2016
+
+---
+
+# Agenda
+
+1. Introduction
+
+2. Goals
+
+3. Ways
+
+4. Concepts
+
+5. Demo
+
+6. Status
+
+---
+
+# Introduction
+
+it's all about team work
+
+- Me, Dieter Reuter
+
+  - Consultant at daytime
+  - Hacker & Pirate by night
+
+- Hypriot Team
+
+  - five individuals: Andreas, Dieter, Govinda, Mathias, Stefan
+   - [x] devs
+   - [x] devops
+   - [x] architects
+   - [x] consultants 
+
+--> We're scaling Docker containers - in a different way!
+
+---
+
+# Goals
+
+Containers and the Internet of Things
+
+- evangelizing to use Docker container on ARM boards
+
+- convincing Docker containers for IoT applications
+
+- enabling the Docker ecosystem on low-powered devices
+
+*Gartner says 6.4 billion connected "Things" will be in use in 2016, up 30 percent from 2015*
+
+*In turn, that number is expected to further explode by 2020, where the IoT market will include 20.8 billion things*
+
+--> pushing the Docker technology into the IoT world
+
+---
+
+# Ways - 1. Iteration
+
+run a proof-of-concept
+
+  - select the Raspberry Pi as a popular device
+
+  - tried to run Docker on a RPi model B
+    - found only outdated tutorials 
+    - using Alpine Linux was "special"
+    - upgrading Raspbian takes 5 to 6 hours
+
+  - let's improve this situation!
+    - need to compile Docker on ARMv6
+    - need to create a special Linux kernel
+    - need to package all into a new SD card image
+
+--> in the end, we built HypriotOS (based on Raspbian/Debian)
+
+---
+
+# Ways - 2. Iteration - Updates
+
+porting the complete Docker ecosystem to ARM
+
+  - Docker Compose
+
+  - Docker Swarm
+
+  - Docker Machine
+
+created all Docker releases for ARM just-in-time
+
+  - from Docker 1.4 until 1.10 (sometimes minutes after release!)
+
+shipping every new Linux kernel version
+
+  - from 3.18 until 4.1.12
+
+switching to Raspbian Jessie
+
+included support for the Raspberry 7" Touch Display
+
+--> complete Docker toolset on ARM
+
+---
+
+# Ways - 3. Iteration - Cluster Lab
+
+create a learning platform for clusters
+
+  - cheap, using 3 to 5 Raspberry Pi's and a network switch
+
+  - easy to setup a cluster with HypriotOS and Docker
+
+    - Google's Kubernetes team members did it!
+
+  - ready for classes in univercity
+
+  - ready for talks and live demos
+
+  - ready for professional trainings too
+
+--> Hypriot Cluster Lab is just easy-to-use
+
+---
+
+# Ways - 4. Iteration (under construction!)
+
+create a container OS for ARM devices
+
+  - using a mainline Linux distro (Debian Jessie)
+
+  - building blocks for ready-to-use SD images
+
+  - support all important ARM devices
+
+    - Raspberry Pi
+
+    - ODROID C1+, XU4
+
+    - Banana Pi
+
+    - BeagleBoneBlack
+
+    - Pine A64+
+
+    - ODROID C2
+
+--> device list will be continued...
+
+---
+
+# Concepts - Easy Building Blocks
+
+  - small and simple pieces
+
+  - easy to understand
+  
+  - easy to develop
+  
+  - easy to maintain
+  
+--> combine it like LEGO bricks
+
+---
+
+# Concepts - Full Transparency
+
+  - develop locally (Vagrant + Docker) 
+
+  - automated build server (Travis + Docker)
+
+  - automated testing (ServerSpec)
+
+  - automated releasing (GitHub releases)
+
+--> every single detail is visible
+
+---
+
+# Concepts - Parts and Ideas
+
+the *new* HypriotOS
+
+  - a Debian-based root filesystem (32 and 64-bit)
+
+  - a board specific layer
+    - Linux kernel
+    - firmware
+    - bootloader
+
+  - a common layer
+    - Hypriot specific settings and tools
+    - Docker Engine
+    - Compose, Swarm, Machine
+
+  - an optional application layer
+    - Hypriot Cluster Lab
+
+--> creating ready-to-run SD card images
+
+---
+
+# Concepts - Open Source Everything
+
+All these parts are already open sourced at GitHub https://github.com/hypriot
+
+  - root filesystem: https://github.com/hypriot/os-rootfs
+
+  - raw image: https://github.com/hypriot/image-builder-raw
+
+  - Raspberry Pi: https://github.com/hypriot/image-builder-rpi
+
+  - ODROID C1/C1+: https://github.com/hypriot/image-builder-odroid-c1
+
+  - Banana Pi: https://github.com/hypriot/image-builder-bananapi
+
+Come and try it out
+
+  - hack on it
+
+  - improve it
+
+  - add new boards and features
+
+--> we need your help !
+
+---
+
+# Demo
+
+---
+
+# Current Status of HypriotOS
+
+active Docker ARM community
+
+  - Gitter channel (> 280 users)
+
+  - Twitter is growing fast (> 750 followers)
+
+  - increasing download numbers (Cloudflare helps)
+
+everybody is using Docker on ARM right now
+
+  - HypriotOS is the easiest way around
+
+  - download and boot takes just 5 minutes
+
+--> break all limits with the new HypriotOS !
+
+---
+
+# Thank You
+
+and let's stay in contact:
+
+- Find me on Twitter: [@Quintus23M](https://twitter.com/Quintus23M)
+
+- Hypriot Blog: http://blog.hypriot.com
+
+- Hypriot on Twitter: [@HypriotTweets](https://twitter.com/HypriotTweets)
+
+- GitHub: https://github.com/hypriot
+
+- Gitter: https://gitter.im/hypriot/talk
+---
+
+# Let's Swarm the Pirate Way
+
+Happy Hacking !
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
