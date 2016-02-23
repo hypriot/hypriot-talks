@@ -143,8 +143,6 @@ class: left
 
 .invisible[#
 
-#
-
 ]
 
 ## Stefan Scherer
@@ -153,5 +151,6 @@ class: left
 ### github.com/StefanScherer
 
 .invisible[#
+
 
 ]
