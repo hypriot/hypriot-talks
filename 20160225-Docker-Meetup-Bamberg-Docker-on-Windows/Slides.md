@@ -130,6 +130,26 @@ background-image: url(windows_container_host.png)
 
 ---
 
+# Where to go next?
+
+## Azure
+  * ["Deploy to azure"](https://github.com/StefanScherer/docker-windows-azure)
+
+## Local
+  * [packer build](https://github.com/StefanScherer/packer-windows)
+  * [vagrant up](https://github.com/StefanScherer/docker-windows-box)
+  * VirtualBox, VMware
+
+---
+
+
+
+background-image: url(docker_windows_box.png)
+
+#  
+
+---
+
 class: left
 
 .invisible[#
