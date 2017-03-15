@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      
+      .image-30 img {
+			width: 30%;
+      }
+  
+      .big-image img {
+			width: 80%;
+			margin-top: 15%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Docker opens the Doors for IoT
+
+.center[.image-50[![sketch](exciting_times_ahead.jpg)]]
+
+***
+
+Dieter Reuter [@Quintus23M](https://twitter.com/Quintus23M)
+
+<!---
+.center[.image-30[![sketch](hypriot_logo_white_bg_1920.png)]]
+-->
+
+Hypriot Team [@HypriotTweets](https://twitter.com/HypriotTweets) – https://blog.hypriot.com
+
+***
+
+[IoT Conference 2017, Munich](https://iotcon.de/session/docker-opens-the-doors-for-iot/) / March 15th, 2017
+
+
+---
+
+class: center, middle
+
+# Docker opens the Doors for IoT
+
+.center[.image-50[![sketch](exciting_times_ahead.jpg)]]
+
+***
+
+Dieter Reuter [@Quintus23M](https://twitter.com/Quintus23M)
+
+<!---
+.center[.image-30[![sketch](bee42_logo1.png)]]
+-->
+
+[@bee42solutions](https://twitter.com/bee42solutions) – https://bee42.com
+
+***
+
+[IoT Conference 2017, Munich](https://iotcon.de/session/docker-opens-the-doors-for-iot/) / March 15th, 2017
+
+
+---
+
+# Agenda
+
+
+1. Introduction
+
+2. IoT Challenges
+
+3. Goals
+
+4. Docker Advantages
+
+5. Proof of Concept
+
+6. Summary
+
+
+---
+
+# Introduction
+
+...it's NOT about me...
+
+**Dieter Reuter**
+
+  - Consultant [@bee42solutions](https://twitter.com/bee42solutions) 🐝
+
+  - Hacker & Pirate by night
+  
+  - Working with Docker since >3 years
+
+  - [Docker Captain](https://www.docker.com/community/docker-captains) 🐳, 66 world wide
+    
+**--> I'm pushing Docker to ARM & IoT since >2.5 years**
+
+
+---
+
+# Introduction
+
+...it's all about team work
+
+**Hypriot Team [@HypriotTweets](https://twitter.com/HypriotTweets) https://blog.hypriot.com**
+
+  - five individuals: Andreas, Dieter, Govinda, Mathias, Stefan
+
+  - broad range of skill sets: Devs, DevOps, Trainers, Consulants
+
+  - Open Source project to run Docker on ARM & IoT devices
+
+**--> We've built HypriotOS, a Docker-enabled OS for Raspberry Pi**
+
+
+---
+
+# Introduction
+
+...it's all about team work
+
+**bee42 solutions gmbh 🐝 https://bee42.com**
+
+   - DevOps company
+
+   - Digital Transformation
+
+   - System Architects & Consultants 
+
+   - Trainings for DevOps, Containers & Docker
+
+**--> We're scaling Docker containers - in a different way!**
+
+
+---
+
+# IoT Challenges
+
+We'll get a huge number of devices...
+
+- Development
+
+- Delivery / Deployment
+
+- Updates (new features, bug fixes)
+
+- Security
+
+- Low bandwidth
+
+
+---
+
+# Goals
+
+Containers and the Internet of Things
+
+- evangelizing to use Docker container on ARM boards
+
+- convincing Docker containers for IoT applications
+
+- enabling the Docker ecosystem on low-powered devices
+
+*Gartner says 6.4 billion connected "Things" will be in use in 2016, up 30 percent from 2015*
+
+*In turn, that number is expected to further explode by 2020, where the IoT market will include 20.8 billion things*
+
+**--> pushing the Docker technology into the IoT world**
+
+
+---
+
+# Docker Advantages
+
+- Containers are isolated
+
+- Containers are portable 
+
+- Containers can be really small
+
+- it's easy to "install" software as a container
+
+- an update is just to start a new container
+
+**--> Docker helps to deliver Apps to IoT devices**
+
+
+---
+
+# Docker Development Stack
+
+- Developers: Docker4Mac, Docker4Windows, Docker on Linux
+
+- Testing: locally, on-premises (Jenkins, GitLab), Travis-CI, Circle-CI, CodeShip
+
+- Production: backend services for Cloud & Private Cloud
+
+- Deploy apps as containers on IoT devices (Linux on Intel, ARMv7, AARCH64, ...)
+
+
+---
+
+# Requirements for Docker on ARM
+
+- Hardware min: 1x Core, ARMv6, 256MB memory
+
+- Linux Kernel w/ Docker related kernel modules
+
+- Operating System: Ubuntu, Debian, Alpine, Buildroot/Yocto, ...
+
+- Docker tools: Engine, Compose, Machine
+
+**--> Docker is already building binaries for ARMv6/7 and AARCH64**
+
+
+---
+# Proof of Concept
+
+Building a complete OS to use Docker on ARM / IoT devices...
+
+.center[.image-30[![sketch](docker_pirate_raspberry_plus_docker-tools.png)]]
+
+**--> complete Docker toolset on ARM**
+
+
+---
+
+# PoC - Easy Building Blocks
+
+  - small and simple pieces
+
+  - easy to understand
+  
+  - easy to develop
+  
+  - easy to maintain
+  
+**--> combine it like LEGO bricks**
+
+
+---
+
+# PoC - Full Transparency
+
+  - develop locally (Vagrant + Docker) 
+
+  - automated build server (Travis + Docker)
+
+  - automated testing (ServerSpec)
+
+  - automated releasing (GitHub releases)
+
+**--> every single detail is visible**
+
+
+---
+
+# PoC - Parts and Ideas
+
+HypriotOS
+
+  - a Debian-based root filesystem (32 and 64-bit)
+
+  - a board specific layer
+    - Linux kernel
+    - firmware
+    - bootloader
+
+  - a common layer
+    - Hypriot specific settings and tools
+    - Docker Engine
+    - Docker Compose, Docker Machine
+
+**--> creating ready-to-run SD card images**
+
+
+---
+
+# PoC - Open Source Everything
+
+All these parts are already open sourced at GitHub https://github.com/hypriot
+
+  - root filesystem: https://github.com/hypriot/os-rootfs
+
+  - raw image: https://github.com/hypriot/image-builder-raw
+
+  - Raspberry Pi: https://github.com/hypriot/image-builder-rpi
+
+Come and try it out
+
+  - hack on it
+
+  - improve it
+
+**--> it's all Open Source**
+
+
+---
+
+# Summary
+
+Container are ready for IoT
+
+- easier development w/ Docker (Windows, macOS, Linux)
+
+- faster time-to-market
+
+- security built-in w/ container isolation
+
+- easier updates: new features/value, security fixes
+
+**--> Docker already supports ARM 32bit / 64bit**
+
+
+---
+
+# Thank You
+
+and let's stay in contact:
+
+**Dieter Reuter, bee42 solutions gmbh**
+
+- [@bee42solutions](https://twitter.com/bee42solutions) - https://bee42.com
+
+- Find me on Twitter: [@Quintus23M](https://twitter.com/Quintus23M) or [@HypriotTweets](https://twitter.com/HypriotTweets)
+
+- Hypriot Blog: http://blog.hypriot.com
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
